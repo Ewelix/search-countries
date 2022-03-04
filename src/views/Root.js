@@ -1,15 +1,18 @@
 import React from 'react';
-import Dashboard from "./Dashboard/Dashboard";
+import MainTemplate from "./MainTemplate/MainTemplate";
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../assets/styles/globalStyle.js'
-import { theme } from '../assets/styles/theme';
+import { theme, mode } from '../assets/styles/theme';
+import DarkModeProvider from "../providers/darkModeProvider";
 
 const Root = () => {
     return (
         <>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme} mode={mode}>
                 <GlobalStyle/>
-                <Dashboard/>
+                <DarkModeProvider>
+                    <MainTemplate/>
+                </DarkModeProvider>
             </ThemeProvider>
         </>
     );
