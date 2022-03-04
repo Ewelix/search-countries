@@ -26,4 +26,8 @@ export const Content = styled.div`
     }
 `;
 
-export const ContentDetails = styled.div``;
+export const ContentDetails = styled.div`
+  p {
+    margin: 5px 0;
+  }
+`;

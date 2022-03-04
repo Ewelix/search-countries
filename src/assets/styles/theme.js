@@ -9,24 +9,13 @@ export const size = {
 };
 export const theme = {
     colors: {
-        white: '#FFF',
-        // lightGray: '#EEEFF4',
-        // mediumLightGray: '#C8CCD8',
-        // mediumGray: '#7D828F',
-        // darkGray: '#60636D',
-        // bluishGray: '#C8CCD8',
-        // black: '#1B1D23',
-    },
-// - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
-    darkMode: {
-        //         - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
-// - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
-    },
-    lightMode: {
-        // - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
-// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
-// - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
-        lightGray: '#F2F2F2'
+        lightBlack: '#111517',
+        veryDarkBlue: '#202c37',
+        darkBlue: '#2b3945',
+        darkGray: '#858585',
+        lightGray: '#F2F2F2',
+        veryLightGray: '#fafafa',
+        white: '#fff',
     },
     fontWeight: {
         light: 300,
@@ -46,4 +35,28 @@ export const theme = {
         xl: `min-width: ${size.width.xl}px`,
         xxl: `min-width: ${size.width.xxl}px`,
     },
+};
+
+export const backgroundColor = theme.colors.veryLightGray;
+export const elementColor = theme.colors.white;
+export const inputColor = theme.colors.darkGray;
+export const textColor = theme.colors.lightBlack;
+
+const lightMode = {
+    backgroundColor,
+    elementColor,
+    inputColor,
+    textColor
+};
+
+const darkMode = {
+    backgroundColor: theme.colors.veryDarkBlue,
+    elementColor: theme.colors.darkBlue,
+    inputColor,
+    textColor: theme.colors.white
+};
+
+export const Mode = {
+    light: lightMode,
+    dark: darkMode,
 };
