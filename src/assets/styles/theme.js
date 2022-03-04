@@ -1,6 +1,5 @@
 export const size = {
     width: {
-        xs: 420,
         s: 575,
         m: 768,
         l: 1024,
@@ -27,6 +26,7 @@ export const theme = {
         // - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
 // - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
 // - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+        lightGray: '#F2F2F2'
     },
     fontWeight: {
         light: 300,
@@ -36,6 +36,7 @@ export const theme = {
     fontSize: {
         xs: '14px',
         s: '16px',
+        m: '18px',
     },
     device: {
         xs: `min-width: ${size.width.xs}px`,
