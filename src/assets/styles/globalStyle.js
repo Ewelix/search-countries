@@ -2,12 +2,18 @@ import { createGlobalStyle } from 'styled-components';
 import './font.scss';
 
 export const GlobalStyle = createGlobalStyle`
-  html {
+  * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
   
   *, *::after, *::before {
     box-sizing: inherit;
+  }
+  
+  body {
+     background: ${({ theme }) => theme.body};
   }
   
   body,
@@ -26,8 +32,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   p {
-    color: ${({ theme }) => theme.colors.darkGray};
     font-size: ${({ theme }) => theme.fontSize.xs};
-    font-weight: ${({ theme }) => theme.fontWeight.medium};
   }
 `;

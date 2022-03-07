@@ -7,6 +7,7 @@ export const size = {
         xxl: 1400,
     },
 };
+
 export const theme = {
     colors: {
         lightBlack: '#111517',
@@ -34,41 +35,5 @@ export const theme = {
         l: `min-width: ${size.width.l}px`,
         xl: `min-width: ${size.width.xl}px`,
         xxl: `min-width: ${size.width.xxl}px`,
-    }
-};
-
-// export const backgroundColor = theme.colors.veryLightGray;
-// export const elementColor = theme.colors.white;
-// export const inputColor = theme.colors.darkGray;
-// export const textColor = theme.colors.lightBlack;
-//
-// const light = {
-//     backgroundColor,
-//     elementColor,
-//     inputColor,
-//     textColor
-// };
-//
-// const dark = {
-//     backgroundColor: theme.colors.veryDarkBlue,
-//     elementColor: theme.colors.darkBlue,
-//     inputColor,
-//     textColor: theme.colors.white
-// };
-
-export const mode = {
-    light: {
-        backgroundColor:theme.colors.veryLightGray,
-        elementColor: theme.colors.white,
-        inputColor: theme.colors.darkGray,
-        textColor: theme.colors.lightBlack,
     },
-    dark: {
-        backgroundColor: 'red',
-        // theme.colors.veryDarkBlue,
-        elementColor: theme.colors.darkBlue,
-        inputColor: theme.colors.darkGray,
-        textColor: theme.colors.white
-    }
 };
-

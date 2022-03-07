@@ -1,9 +1,12 @@
 import React from 'react';
 import { Wrapper, ImageWrapper, Content, ContentDetails } from "./CountriesListItem.styles";
+import { useDarkModeContext } from "../../providers/darkModeProvider";
 
 const CountriesListItem = ({country: {flags, name, population, region, capital}}) => {
+    const { mode } = useDarkModeContext();
+
     return (
-        <Wrapper>
+        <Wrapper mode={mode}>
             <ImageWrapper>
                 <img src={flags.svg} alt={name}/>
             </ImageWrapper>

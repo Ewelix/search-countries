@@ -3,15 +3,11 @@ import CountriesList from "../../components/CountriesList/CountriesList";
 import { useDarkModeContext } from '../../providers/darkModeProvider';
 import { Wrapper } from "./MainTemplate.styles";
 
-// export const { mode } = useDarkModeContext();
-
 const MainTemplate = () => {
     const { mode } = useDarkModeContext();
-    // const themeMode = mode || 'light';
-    // console.log(mode, themeMode)
 
     return (
-        <Wrapper>
+        <Wrapper mode={mode}>
             <CountriesList/>
         </Wrapper>
 
