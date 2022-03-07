@@ -1,10 +1,15 @@
 import styled from 'styled-components';
+import {Container} from "../../views/MainTemplate/MainTemplate.styles";
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  ${Container} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 100vh;
+  }
+  
 
   @media (${({ theme }) => theme.device.m}) {
   }

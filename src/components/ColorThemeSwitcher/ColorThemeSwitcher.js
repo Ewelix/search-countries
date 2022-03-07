@@ -1,10 +1,11 @@
 import React from 'react';
+import { Wrapper } from "./ColorThemeSwitcher.styles";
 
 const ColorThemeSwitcher = () => {
     return (
-        <div>
-            
-        </div>
+        <Wrapper>
+            Dark Mode
+        </Wrapper>
     );
 };
 

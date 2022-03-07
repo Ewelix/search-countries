@@ -3,7 +3,7 @@ export const size = {
         s: 575,
         m: 768,
         l: 1024,
-        xl: 1200,
+        xl: 1280,
         xxl: 1400,
     },
 };
@@ -27,6 +27,7 @@ export const theme = {
         xs: '14px',
         s: '16px',
         m: '18px',
+        l: '24px',
     },
     device: {
         xs: `min-width: ${size.width.xs}px`,
@@ -36,4 +37,5 @@ export const theme = {
         xl: `min-width: ${size.width.xl}px`,
         xxl: `min-width: ${size.width.xxl}px`,
     },
+    shadow: '1px 1px 15px 0 rgba(0,0,0,0.05)',
 };

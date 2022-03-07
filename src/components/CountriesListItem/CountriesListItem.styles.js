@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     max-width: 260px;
+    margin-bottom: 5%;
     border-radius: 10px;
     overflow: hidden;
     background: ${props => props.mode === 'dark' ? '#2b3945' : '#fff'};
