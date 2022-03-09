@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import CountriesListItem from "../CountriesListItem/CountriesListItem";
 import { Wrapper } from "./CountriesList.styles";
-import {Container} from "../../views/MainTemplate/MainTemplate.styles";
+import { Container } from "../../views/MainTemplate/MainTemplate.styles";
 
 const API_URL = 'https://restcountries.com/v2/all';
 
@@ -17,8 +17,6 @@ const CountriesList = () => {
             .catch(err => console.log(err))
 
     }, []);
-
-    console.log(countries.length)
 
     return (
         <Wrapper>

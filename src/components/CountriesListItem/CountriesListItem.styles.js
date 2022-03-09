@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
     border-radius: 10px;
     overflow: hidden;
     background: ${props => props.mode === 'dark' ? '#2b3945' : '#fff'};
+    box-shadow: ${({theme}) => theme.shadow};
   
   a {
     color: inherit;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SelectWrapper = styled.div`
   .select {
     width: 200px;
+    box-shadow: ${({theme}) => theme.shadow};
     
     &__control {
       padding: 5px 5px 5px 10px;

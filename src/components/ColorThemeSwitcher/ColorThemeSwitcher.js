@@ -8,7 +8,8 @@ const ColorThemeSwitcher = () => {
     const { mode, toggleMode } = useDarkModeContext();
 
     const handleClick = () => {
-        toggleMode(mode === 'dark' ? 'light' : 'dark')
+        const targetMode = mode === 'dark' ? 'light' : 'dark';
+        toggleMode(targetMode);
     }
 
     return (
