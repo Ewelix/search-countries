@@ -1,20 +1,40 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from 'react-router-dom';
 import MainTemplate from "./MainTemplate/MainTemplate";
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../assets/styles/globalStyle.js'
 import { theme} from '../assets/styles/theme';
 import DarkModeProvider from "../providers/darkModeProvider";
+import Nav from "../components/Nav/Nav";
+import CountryCard from "../components/CountryCard/CountryCard";
+import CountriesList from "../components/CountriesList/CountriesList";
+import Header from "../components/Header/Header";
 
 const Root = () => {
     return (
-        <>
+        <Router>
             <ThemeProvider theme={theme}>
                 <GlobalStyle/>
                 <DarkModeProvider>
-                    <MainTemplate/>
-                </DarkModeProvider>
+                    <Nav/>
+                    <MainTemplate>
+                        <Switch>
+                            <Route exact path="/">
+                                <Header/>
+                                <CountriesList/>
+                            </Route>
+                            <Route path="/card">
+                                <CountryCard />
+                            </Route>
+                        </Switch>
+                </MainTemplate>
+            </DarkModeProvider>
             </ThemeProvider>
-        </>
+        </Router>
     );
 };
 

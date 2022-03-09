@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Wrapper, ImageWrapper, Content, ContentDetails } from "./CountriesListItem.styles";
 import { useDarkModeContext } from "../../providers/darkModeProvider";
 
@@ -7,6 +8,7 @@ const CountriesListItem = ({country: {flags, name, population, region, capital}}
 
     return (
         <Wrapper mode={mode}>
+            <Link to="/card">
             <ImageWrapper>
                 <img src={flags.svg} alt={name}/>
             </ImageWrapper>
@@ -18,6 +20,7 @@ const CountriesListItem = ({country: {flags, name, population, region, capital}}
                     {capital && <p><strong>Capital:</strong> {capital}</p>}
                 </ContentDetails>
             </Content>
+            </Link>
         </Wrapper>
     );
 };

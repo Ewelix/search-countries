@@ -3,9 +3,14 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     max-width: 260px;
     margin-bottom: 5%;
+    color: ${props => props.mode === 'dark' ? '#fff' : '#111517'};
     border-radius: 10px;
     overflow: hidden;
     background: ${props => props.mode === 'dark' ? '#2b3945' : '#fff'};
+  
+  a {
+    color: inherit;
+  }
   
   img {
     max-width: 100%;
