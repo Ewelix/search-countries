@@ -9,7 +9,7 @@ const Header = () => {
         <Wrapper>
             <Container>
                 <Search/>
-                <Filter/>
+                <Filter />
             </Container>
         </Wrapper>
     );

@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Select from 'react-select';
+import { SelectWrapper } from "./Filter.styles";
+import { useDarkModeContext } from "../../providers/darkModeProvider";
 
+const options = [
+    { label: 'Africa', value: 'Africa'},
+    { label: 'America', value: 'America' },
+    { label: 'Asia', value: 'Asia' },
+    { label: 'Europe', value: 'Europe'},
+    { label: 'Oceania', value: 'Oceania' },
+]
 
 const Filter = () => {
-    const [region, setRegion] = React.useState('');
-
-    const handleChange = (event) => {
-        setRegion(event.target.value);
-    };
+    const [selectedOption, setSelectedOption] = useState(null);
+    const { mode } = useDarkModeContext();
 
     return (
-        <div>hi</div>
+        <SelectWrapper mode={mode}>
+            <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={options}
+                className="select"
+                classNamePrefix="select"
+                placeholder="Filter by Region"
+            />
+        </SelectWrapper>
     );
 };
 
