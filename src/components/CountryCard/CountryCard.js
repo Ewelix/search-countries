@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import { Link, useParams } from "react-router-dom";
-import {Content, ContentDetails, ImageWrapper} from "../CountriesListItem/CountriesListItem.styles";
+import { useParams } from "react-router-dom";
+import {ImageWrapper} from "../CountriesListItem/CountriesListItem.styles";
 import { CardWrapper } from './CountryCard.styles';
-import BorderCountriesList from "../BorderCountriesList/BorderCountriesList";
 import {useDarkModeContext} from "../../providers/darkModeProvider";
 import CountryCardContent from './../CountryCardContent/CountryCardContent';
+import {Content} from './CountryCard.styles';
+import NavButton from "../NavButton/NavButton";
 
 const API_URL = 'https://restcountries.com/v2';
 
@@ -25,11 +26,13 @@ const CountryCard = () => {
     } else {
         return (
             <CardWrapper mode={mode}>
-                <Link to="/">Button</Link>
-                <ImageWrapper>
-                    <img src={country.flags.svg} alt={country.name}/>
-                </ImageWrapper>
-                <CountryCardContent data={country}/>
+                <NavButton/>
+                <Content>
+                    <ImageWrapper>
+                        <img src={country.flags.svg} alt={country.name}/>
+                    </ImageWrapper>
+                    <CountryCardContent data={country}/>
+                </Content>
             </CardWrapper>
         );
     }

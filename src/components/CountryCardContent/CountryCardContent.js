@@ -17,8 +17,8 @@ const CountryCardContent = ({data: {name, population, region, subregion, capital
                 <p><strong>Top Level Domain:</strong> {topLevelDomain}</p>
                 <p><strong>Currencies:</strong> {currencies.map((currency, i) => <span key={i}>{currency.name}</span>)}</p>
                 <p><strong>Languages:</strong> {languages.map((lang, i) => <span key={i}>{lang.name}</span>)}</p>
-                {borders.length > 0 && <BorderCountriesList data={borders}/>}
             </ContentDetails>
+            {borders.length > 0 && <BorderCountriesList data={borders}/>}
         </Content>
     );
 };
