@@ -3,13 +3,13 @@ import CountriesListItem from "../CountriesListItem/CountriesListItem";
 import { Wrapper } from "./CountriesList.styles";
 import { Container } from "../../views/MainTemplate/MainTemplate.styles";
 
-const API_URL = 'https://restcountries.com/v2/all';
+const API_URL = 'https://restcountries.com/v2';
 
 const CountriesList = () => {
     const [countries, setCountries] = useState([]);
 
     useEffect(() => {
-        fetch(API_URL)
+        fetch(`${API_URL}/all`)
             .then(response => response.json())
             .then(data => {
                 setCountries(data);

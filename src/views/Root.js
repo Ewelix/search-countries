@@ -27,7 +27,7 @@ const Root = () => {
                                 <Header/>
                                 <CountriesList/>
                             </Route>
-                            <Route path="/card">
+                            <Route path="/country/:code">
                                 <CountryCard />
                             </Route>
                         </Switch>

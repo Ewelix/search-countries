@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  height: calc(100vh - 80px);
   background: ${props => props.mode === 'dark' ? '#202c37' : '#fafafa'};
   color: ${props => props.mode === 'dark' ? '#fff' : '#111517'};
 `;

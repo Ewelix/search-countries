@@ -9,7 +9,7 @@ const DarkModeProvider = ({ children }) => {
     // default mode when refreshed
     let defaultMode = 'light';
 
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         defaultMode = 'dark';
     }
 
@@ -22,7 +22,7 @@ const DarkModeProvider = ({ children }) => {
     window
         .matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change', e => {
-        if(e.matches) {
+        if (e.matches) {
             toggleMode('dark')
         } else {
             toggleMode('light')

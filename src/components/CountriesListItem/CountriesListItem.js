@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { Wrapper, ImageWrapper, Content, ContentDetails } from "./CountriesListItem.styles";
 import { useDarkModeContext } from "../../providers/darkModeProvider";
 
-const CountriesListItem = ({country: {flags, name, population, region, capital}}) => {
+const CountriesListItem = ({country: {flags, name, population, region, capital, alpha3Code}}) => {
     const { mode } = useDarkModeContext();
 
     return (
         <Wrapper mode={mode}>
-            <Link to="/card">
+            <Link to={`/country/${alpha3Code}`}>
             <ImageWrapper>
                 <img src={flags.svg} alt={name}/>
             </ImageWrapper>
