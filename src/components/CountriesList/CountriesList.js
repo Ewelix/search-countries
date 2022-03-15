@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import CountriesListItem from "../CountriesListItem/CountriesListItem";
 import { Wrapper } from "./CountriesList.styles";
 import { Container } from "../../views/MainTemplate/MainTemplate.styles";

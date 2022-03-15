@@ -37,6 +37,7 @@ export const ImageWrapper = styled.div`
 
 export const Content = styled.div`
     margin-top: 6%;
+    padding-bottom: 2%;
 
   @media (${({ theme }) => theme.device.m}) {
     display: flex;

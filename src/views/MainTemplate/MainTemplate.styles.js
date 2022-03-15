@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  height: calc(100vh - 80px);
   background: ${props => props.mode === 'dark' ? '#202c37' : '#fafafa'};
   color: ${props => props.mode === 'dark' ? '#fff' : '#111517'};
+
+  @media (${({ theme }) => theme.device.m}) {
+    //min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
+  }
 `;
 
 export const Container = styled.div`
@@ -16,6 +20,6 @@ export const Container = styled.div`
   }
 
   @media (${({ theme }) => theme.device.xl}) {
-    padding: 0;
+    padding: 10px;
   }
 `
