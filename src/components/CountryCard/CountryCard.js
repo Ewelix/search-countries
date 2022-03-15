@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
-import {ImageWrapper} from "../CountriesListItem/CountriesListItem.styles";
-import { CardWrapper } from './CountryCard.styles';
+import { CardWrapper, ImageWrapper } from './CountryCard.styles';
 import {useDarkModeContext} from "../../providers/darkModeProvider";
 import CountryCardContent from './../CountryCardContent/CountryCardContent';
 import {Content} from './CountryCard.styles';

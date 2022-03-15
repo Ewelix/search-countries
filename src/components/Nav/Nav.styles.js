@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   color: ${props => props.mode === 'dark' ? '#fff' : '#111517'};
   box-shadow: ${({theme}) => theme.shadow};
   
-  
   ${Container} {
     display: flex;
     justify-content: space-between;

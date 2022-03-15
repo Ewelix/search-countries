@@ -5,8 +5,8 @@ import BorderCountriesList from "../BorderCountriesList/BorderCountriesList";
 const CountryCardContent = ({data: {name, population, region, subregion, capital, topLevelDomain, currencies, languages, borders}}) => {
     return (
         <Content>
+            <h5>{name}</h5>
             <ContentDetails>
-                <h5>{name}</h5>
                 <p><strong>Native Name:</strong> {name}</p>
                 <p><strong>Population:</strong> {population}</p>
                 <p><strong>Region:</strong> {region}</p>

@@ -29,6 +29,7 @@ export const theme = {
         s: '16px',
         m: '18px',
         l: '24px',
+        xl: '32px',
     },
     device: {
         xs: `min-width: ${size.width.xs}px`,
@@ -38,5 +39,5 @@ export const theme = {
         xl: `min-width: ${size.width.xl}px`,
         xxl: `min-width: ${size.width.xxl}px`,
     },
-    shadow: '1px 1px 15px 0 rgba(0,0,0,0.05)',
+    shadow: '0px 0px 5px #11151752',
 };
