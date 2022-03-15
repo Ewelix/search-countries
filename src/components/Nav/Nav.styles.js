@@ -14,8 +14,10 @@ export const Wrapper = styled.div`
     height: 100%;
   }
   
-  h1 {
+  a {
+    color: ${props => props.mode === 'dark' ? '#fff' : '#111517'};
     font-size: ${({theme}) => theme.fontSize.xs};
+    font-weight: ${({theme}) => theme.fontWeight.bold};
 
     @media (${({ theme }) => theme.device.s}) {
       font-size: ${({theme}) => theme.fontSize.l};

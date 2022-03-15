@@ -18,7 +18,7 @@ const CountryCard = () => {
             .then(res => res.json())
             .then(data => setCountry(data))
             .catch(err => console.log(err))
-    }, [])
+    }, [code])
 
     if (country === false) {
         return <h1>Loading...</h1>
