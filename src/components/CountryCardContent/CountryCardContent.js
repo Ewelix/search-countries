@@ -2,7 +2,18 @@ import React from 'react';
 import { Content, ContentDetails } from "./CountryCardContent.styles";
 import BorderCountriesList from "../BorderCountriesList/BorderCountriesList";
 
-const CountryCardContent = ({data: {name, population, region, subregion, capital, topLevelDomain, currencies, languages, borders}}) => {
+const CountryCardContent = ({ data }) => {
+    const {
+        name,
+        population,
+        region,
+        subregion,
+        capital,
+        topLevelDomain,
+        currencies,
+        languages,
+        borders } = data;
+
     return (
         <Content>
             <h5>{name}</h5>
@@ -18,7 +29,7 @@ const CountryCardContent = ({data: {name, population, region, subregion, capital
                 <p><strong>Currencies:</strong> {currencies.map((currency, i) => <span key={i}>{currency.name}</span>)}</p>
                 <p><strong>Languages:</strong> {languages.map((lang, i) => <span key={i}>{lang.name}</span>)}</p>
             </ContentDetails>
-            {borders.length > 0 && <BorderCountriesList data={borders}/>}
+            {borders && <BorderCountriesList data={borders}/>}
         </Content>
     );
 };
