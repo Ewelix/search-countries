@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   color: ${props => props.mode === 'dark' ? '#fff' : '#111517'};
 
   @media (${({ theme }) => theme.device.m}) {
-    //min-height: calc(100vh - 80px);
     min-height: calc(100vh - 80px);
   }
 `;

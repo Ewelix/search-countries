@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
 
   ${Container} {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (${({ theme }) => theme.device.m}) {
+      justify-content: space-between;
+    }
   }
 `;

@@ -13,6 +13,9 @@ import Nav from "../components/Nav/Nav";
 import CountryCard from "../components/CountryCard/CountryCard";
 import CountriesList from "../components/CountriesList/CountriesList";
 import Header from "../components/Header/Header";
+import SearchBar from "../components/Search/SearchBar";
+import Filter from "../components/Filter/Filter";
+import {Container} from "./MainTemplate/MainTemplate.styles";
 
 const Root = () => {
     return (
@@ -25,7 +28,6 @@ const Root = () => {
                         <Switch>
                             <Route exact path="/">
                                 <Header/>
-                                <CountriesList/>
                             </Route>
                             <Route path="/country/:code">
                                 <CountryCard />

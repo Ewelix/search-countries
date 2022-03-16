@@ -27,7 +27,7 @@ export const ImageWrapper = styled.div`
 `
 
 export const Content = styled.div`
-  padding: 0 0 30px 25px;
+  padding: 0 10px 30px 25px;
   
     h5 {
       padding: 25px 0 15px;

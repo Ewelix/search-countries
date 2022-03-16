@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import { CardWrapper, ImageWrapper } from './CountryCard.styles';
-import {useDarkModeContext} from "../../providers/darkModeProvider";
+import { useDarkModeContext } from "../../providers/darkModeProvider";
 import CountryCardContent from './../CountryCardContent/CountryCardContent';
-import {Content} from './CountryCard.styles';
 import NavButton from "../NavButton/NavButton";
+import { CardWrapper, ImageWrapper } from './CountryCard.styles';
+import { Content } from './CountryCard.styles';
 
 const API_URL = 'https://restcountries.com/v2';
 
@@ -20,7 +20,7 @@ const CountryCard = () => {
             .catch(err => console.log(err))
     }, [code])
 
-    if (country === false) {
+    if (!country) {
         return <h1>Loading...</h1>
     } else {
         return (
