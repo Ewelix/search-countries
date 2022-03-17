@@ -5,8 +5,7 @@ import Filter from "../Filter/Filter";
 import SearchBar from "../Search/SearchBar";
 import { Wrapper } from "./Header.styles";
 import { Container } from "../../views/MainTemplate/MainTemplate.styles";
-
-const BASE_URL = 'https://restcountries.com/v2';
+import { BASE_URL } from "../../api";
 
 const Header = () => {
     const [countries, setCountries] = useState([]);
@@ -59,7 +58,7 @@ const Header = () => {
                             searchCountries={searchCountries}
                             searchPhrase={searchPhrase}
                         />
-                        <Filter/>
+                        <Filter setCountries={setCountries}/>
                     </Container>
                 {searchPhrase.length > 0 ? (
                     <CountriesList countries={filteredCountries}/>
