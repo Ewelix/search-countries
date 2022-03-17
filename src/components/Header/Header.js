@@ -1,71 +1,74 @@
 import React, { useEffect, useState } from 'react';
 import { useDarkModeContext } from "../../providers/darkModeProvider";
-import useCountries from './../../hooks/useCountries';
 import CountriesList from "../CountriesList/CountriesList";
 import Filter from "../Filter/Filter";
+import SearchBar from "../Search/SearchBar";
 import { Wrapper } from "./Header.styles";
-import { FaSearch } from "react-icons/fa";
 import { Container } from "../../views/MainTemplate/MainTemplate.styles";
 
+const BASE_URL = 'https://restcountries.com/v2';
+
 const Header = () => {
-    const {mode} = useDarkModeContext();
-    const [countriesList, setCountriesList] = useState([])
-    const [error, setError] = useState('');
-    const { getAllCountries, searchByName } = useCountries();
+    const [countries, setCountries] = useState([]);
+    const [filteredCountries, setFilteredCountries] = useState([]);
     const [searchPhrase, setSearchPhrase] = useState('');
-    let allCountries;
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState('');
+    const { mode } = useDarkModeContext();
 
-    // Pobranie wszystkich panstw i pierwsze wyswietlenie
-
-    const getCountries = async (e) => {
-        allCountries = await getAllCountries();
-        setCountriesList(allCountries);
+    const getAllCountries = async () => {
+        try {
+            const res = await fetch(`${BASE_URL}/all`)
+            const data = await res.json();
+            setCountries(data);
+            setIsLoading(false);
+        } catch(err) {
+            setError(err)
+        }
     };
 
     useEffect(() => {
-        getCountries();
+        getAllCountries();
     }, [])
 
-    // Search
+    // Search countries by name
+    const searchCountries = (searchInput) => {
+        setSearchPhrase(searchInput);
 
-    const getCountriesNames = async (e) => {
-        const countries = await searchByName(searchPhrase);
-        setCountriesList(countries);
-    };
-
-    useEffect(() => {
-        if (!searchPhrase) return;
-
-        getCountriesNames(searchPhrase);
-    }, [searchPhrase]);
-
-    // Add search reset
-
-    // Filter
-
-    // const handleSelect = (e) => {
-    //     e.target.value === 'none'
-    //         ? setCountries(countries)
-    //         : setCountries(countries.filter(country => country.region === e.target.value))
-    // }
+        if (searchPhrase) {
+            const filtered = countries.filter(country =>
+                Object.values(country.name)
+                    .join("")
+                    .toLowerCase()
+                    .includes(searchInput.toLowerCase())
+            )
+            setFilteredCountries(filtered)
+        } else {
+            setFilteredCountries(countries)
+        }
+    }
 
     return (
-        <Wrapper mode={mode}>
-            <Container>
+        <>
+            {isLoading ? (
+                <h2>{error ? 'Sorry, something went wrong...' : 'Loading...'}</h2>
+            ) : (
                 <Wrapper mode={mode}>
-                    <input
-                        type='text'
-                        placeholder='Search for a country...'
-                        onChange={(e) => setSearchPhrase(e.target.value)}
-                        value={searchPhrase}
-                        name="Search"
-                        id="Search"/>
-                    <FaSearch/>
+                    <Container>
+                        <SearchBar
+                            searchCountries={searchCountries}
+                            searchPhrase={searchPhrase}
+                        />
+                        <Filter/>
+                    </Container>
+                {searchPhrase.length > 0 ? (
+                    <CountriesList countries={filteredCountries}/>
+                    ) : (
+                    <CountriesList countries={countries}/>
+                    )}
                 </Wrapper>
-                <Filter/>
-            </Container>
-            {countriesList ? <CountriesList countries={countriesList}/> : <h2>{error ? error : 'Loading...'}</h2>}
-        </Wrapper>
+            )}
+        </>
     );
 };
 

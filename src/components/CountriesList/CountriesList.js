@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CountriesListItem from "../CountriesListItem/CountriesListItem";
 import { Wrapper } from "./CountriesList.styles";
 import { Container } from "../../views/MainTemplate/MainTemplate.styles";
 
-const CountriesList = ({countries}) => {
+const CountriesList = ({ countries }) => {
     return (
         <Wrapper>
             <Container>
