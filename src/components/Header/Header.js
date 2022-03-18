@@ -47,6 +47,23 @@ const Header = () => {
         }
     }
 
+    const getCountriesByRegion = async (region) => {
+        if (!region) return;
+
+        if(region === 'all') {
+            try {
+                await getAllCountries()
+            } catch (err) {
+                console.log('error', err)
+            }
+            return;
+        }
+
+        const res = await fetch(`${BASE_URL}/region/${region}`);
+        const data = await res.json();
+        setCountries(data);
+    };
+
     return (
         <>
             {isLoading ? (
@@ -58,7 +75,10 @@ const Header = () => {
                             searchCountries={searchCountries}
                             searchPhrase={searchPhrase}
                         />
-                        <Filter setCountries={setCountries}/>
+                        <Filter
+                            setCountries={setCountries}
+                            getCountriesByRegion={getCountriesByRegion}
+                        />
                     </Container>
                 {searchPhrase.length > 0 ? (
                     <CountriesList countries={filteredCountries}/>

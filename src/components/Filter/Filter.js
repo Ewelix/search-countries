@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import Select from 'react-select';
 import { useDarkModeContext } from "../../providers/darkModeProvider";
-import { BASE_URL } from "../../api";
 import { SelectWrapper } from "./Filter.styles";
 
 const options = [
+    { label: 'All', value: 'all'},
     { label: 'Africa', value: 'Africa'},
     { label: 'America', value: 'Americas' },
     { label: 'Asia', value: 'Asia' },
@@ -12,16 +12,9 @@ const options = [
     { label: 'Oceania', value: 'Oceania' },
 ]
 
-const Filter = ({ setCountries }) => {
+const Filter = ({ getCountriesByRegion }) => {
     const [selectedOption, setSelectedOption] = useState('');
     const { mode } = useDarkModeContext();
-
-    const getCountriesByRegion = async (region) => {
-        if (!region) return;
-        const res = await fetch(`${BASE_URL}/region/${region}`)
-        const data = await res.json();
-        setCountries(data);
-    };
 
     const handleChange = (e) => {
         setSelectedOption((e.value).toLowerCase());
