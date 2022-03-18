@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background: ${props => props.mode === 'dark' ? '#202c37' : '#fafafa'};
-  color: ${props => props.mode === 'dark' ? '#fff' : '#111517'};
+  background: ${(props) => (props.mode === 'dark' ? '#202c37' : '#fafafa')};
+  color: ${(props) => (props.mode === 'dark' ? '#fff' : '#111517')};
 
   @media (${({ theme }) => theme.device.m}) {
     min-height: calc(100vh - 80px);

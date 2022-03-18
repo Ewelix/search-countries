@@ -7,15 +7,15 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   *, *::after, *::before {
     box-sizing: inherit;
   }
-  
+
   body {
-     background: ${({ theme }) => theme.body};
+    background: ${({ theme }) => theme.body};
   }
-  
+
   body,
   a,
   button {
@@ -25,12 +25,12 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
-  
+
   img {
     display: block;
     max-width: 100%;
   }
-  
+
   p {
     font-size: ${({ theme }) => theme.fontSize.xs};
   }

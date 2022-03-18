@@ -1,40 +1,40 @@
 import React, { useEffect, useContext } from 'react';
-import UseDarkMode from "../hooks/useDarkMode";
-import DarkModeContext from "../contexts/darkModeContext";
+import UseDarkMode from '../hooks/useDarkMode';
+import DarkModeContext from '../contexts/darkModeContext';
 
 const DarkModeProvider = ({ children }) => {
-    //wyciagam dane z useLightMode
-    const [mode, toggleMode] = UseDarkMode();
+  const [mode, toggleMode] = UseDarkMode();
 
-    // default mode when refreshed
-    let defaultMode = 'light';
+  // default mode when refreshed
+  let defaultMode = 'light';
 
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        defaultMode = 'dark';
-    }
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    defaultMode = 'dark';
+  }
 
-    // set default mode
-    useEffect(() => {
-        toggleMode(defaultMode);
-    }, []);
+  // set default mode
+  useEffect(() => {
+    toggleMode(defaultMode);
+  }, []);
 
-    // when mode is changed
-    window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener('change', e => {
-        if (e.matches) {
-            toggleMode('dark')
-        } else {
-            toggleMode('light')
-        }
-    })
+  // when mode is changed
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', (e) => {
+      if (e.matches) {
+        toggleMode('dark');
+      } else {
+        toggleMode('light');
+      }
+    });
 
-    return (
-        <DarkModeContext.Provider value={{ mode, toggleMode }}>{children}</DarkModeContext.Provider>
-    );
+  return (
+    <DarkModeContext.Provider value={{ mode, toggleMode }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
 };
 
 export default DarkModeProvider;
 
-// Context that we consume in components
 export const useDarkModeContext = () => useContext(DarkModeContext);

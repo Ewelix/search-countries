@@ -1,8 +1,8 @@
 import React from 'react';
 
 const DarkModeContext = React.createContext({
-    mode: '',
-    toggleMode: () => {}
-})
+  mode: '',
+  toggleMode: () => {},
+});
 
 export default DarkModeContext;

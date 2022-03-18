@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const LoaderWrapper = styled.div`
   height: 100vh;
@@ -9,11 +9,11 @@ const LoaderWrapper = styled.div`
 `;
 
 const Loader = ({ error }) => {
-    return (
-        <LoaderWrapper>
-            <h3>{error ? 'Sorry, something went wrong...' : 'Loading...'}</h3>
-        </LoaderWrapper>
-    );
+  return (
+    <LoaderWrapper>
+      <h3>{error ? 'Sorry, something went wrong...' : 'Loading...'}</h3>
+    </LoaderWrapper>
+  );
 };
 
 export default Loader;
