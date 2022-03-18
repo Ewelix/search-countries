@@ -6,6 +6,7 @@ import SearchBar from "../Search/SearchBar";
 import { Wrapper } from "./Header.styles";
 import { Container } from "../../views/MainTemplate/MainTemplate.styles";
 import { BASE_URL } from "../../api";
+import Loader from "../Loader/Loader";
 
 const Header = () => {
     const [countries, setCountries] = useState([]);
@@ -67,7 +68,7 @@ const Header = () => {
     return (
         <>
             {isLoading ? (
-                <h2>{error ? 'Sorry, something went wrong...' : 'Loading...'}</h2>
+                <Loader error={error}/>
             ) : (
                 <Wrapper mode={mode}>
                     <Container>
