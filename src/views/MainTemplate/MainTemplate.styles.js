@@ -21,4 +21,4 @@ export const Container = styled.div`
   @media (${({ theme }) => theme.device.xl}) {
     padding: 10px;
   }
-`
+`;

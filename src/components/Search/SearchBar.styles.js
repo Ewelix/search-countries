@@ -5,12 +5,14 @@ export const Wrapper = styled.div`
   
   input {
     width: 100%;
+    max-width: 300px;
     padding: 15px 15px 15px 50px;
     margin-bottom: 30px;
     color: ${props => props.mode === 'dark' ? '#fff' : '#111517'};
     background: ${props => props.mode === 'dark' ? '#2b3945' : '#fff'};
     border: none;
     border-radius: 5px;
+    box-sizing: border-box;
     box-shadow: ${({theme}) => theme.shadow};
     
     :focus-visible {

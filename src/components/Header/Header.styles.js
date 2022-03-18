@@ -7,8 +7,14 @@ export const Wrapper = styled.div`
   ${Container} {
     display: flex;
     flex-wrap: wrap;
-
-    @media (${({ theme }) => theme.device.m}) {
+  }
+  
+  & > ${Container} {
+    flex-direction: column;
+    margin-bottom: 40px;
+    
+    @media (${({ theme }) => theme.device.s}) {
+      flex-direction: row;
       justify-content: space-between;
     }
   }
